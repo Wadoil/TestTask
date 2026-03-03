@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using System.Text.Json;
 
 namespace TestTaskLKDS
 {
@@ -23,6 +25,8 @@ namespace TestTaskLKDS
         public MainWindow()
         {
             InitializeComponent();
+
+            
         }
     }
 }

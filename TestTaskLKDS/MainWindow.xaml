@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestTaskLKDS"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Справочник" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="#FF005B8B" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.ColumnSpan="2" Text="Стартовая страница" FontSize="24" Foreground="White" TextAlignment="Center" VerticalAlignment="Center"/>
+            <Button x:Name="BackBtn" Grid.Column="4" Content="Назад" Visibility="Visible"/>
+        </Grid>
+
+        <Button x:Name="GenerateBtn" Grid.Column="1" Grid.Row="2" Content="Создать тестовые данные"/>
+
+        <Frame Name="FrmMain" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" NavigationUIVisibility="Hidden" Visibility="Collapsed"/>
     </Grid>
 </Window>
