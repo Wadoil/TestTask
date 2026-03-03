@@ -99,6 +99,12 @@ namespace TestTaskLKDS {
             return;
             case 2:
             this.GenerateBtn = ((System.Windows.Controls.Button)(target));
+            
+            #line 36 "..\..\MainWindow.xaml"
+            this.GenerateBtn.Click += new System.Windows.RoutedEventHandler(this.GenerateBtn_Click);
+            
+            #line default
+            #line hidden
             return;
             case 3:
             this.FrmMain = ((System.Windows.Controls.Frame)(target));

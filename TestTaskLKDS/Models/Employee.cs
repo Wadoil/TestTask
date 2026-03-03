@@ -8,7 +8,7 @@ namespace TestTaskLKDS.Models
 {
     public class Employee
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public int PositionID { get; set; }
