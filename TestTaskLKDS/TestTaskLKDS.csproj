@@ -107,6 +107,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\DataBase.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Organization.cs" />
     <Compile Include="Models\Position.cs" />

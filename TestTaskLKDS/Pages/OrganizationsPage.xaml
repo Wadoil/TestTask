@@ -9,6 +9,33 @@
       Title="OrganizationsPage">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Column="2" Content="Добавить"/>
+        <ListView x:Name="OrganizationsListview" Grid.Row="1" Grid.ColumnSpan="3" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="{Binding ID}" TextAlignment="Left" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Grid.Column="1" Text="{Binding Name}" TextAlignment="Left" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Grid.Column="2" Text="{Binding Address}" TextAlignment="Left" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

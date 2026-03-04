@@ -29,12 +29,12 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.ColumnSpan="2" Text="Стартовая страница" FontSize="24" Foreground="White" TextAlignment="Center" VerticalAlignment="Center"/>
-            <Button x:Name="BackBtn" Grid.Column="4" Content="Назад" Visibility="Visible"/>
+            <TextBlock x:Name="PageLabel" Grid.ColumnSpan="2" Text="Стартовая страница" FontSize="24" Foreground="White" TextAlignment="Center" VerticalAlignment="Center"/>
+            <Button x:Name="BackBtn" Grid.Column="4" Content="Назад" Visibility="Collapsed"/>
         </Grid>
 
         <Button x:Name="GenerateBtn" Grid.Column="1" Grid.Row="2" Content="Создать тестовые данные" Click="GenerateBtn_Click"/>
 
-        <Frame Name="FrmMain" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" NavigationUIVisibility="Hidden" Visibility="Collapsed"/>
+        <Frame Name="FrmMain" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="4" NavigationUIVisibility="Hidden" Visibility="Collapsed"/>
     </Grid>
 </Window>
