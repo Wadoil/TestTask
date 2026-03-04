@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Text.Json;
 using TestTaskLKDS.Models;
+using TestTaskLKDS.Pages;
 
 namespace TestTaskLKDS
 {
@@ -33,7 +34,8 @@ namespace TestTaskLKDS
             {
                 File.ReadAllText(_fileName);
                 isDataLoaded = true;
-                MessageBox.Show("Данные загружены");
+                GenerateBtn.Visibility = Visibility.Collapsed;
+                FrmMain.Navigate(new OrganizationsPage());
             }
             catch{}
         }
@@ -72,6 +74,9 @@ namespace TestTaskLKDS
                 File.WriteAllText(_fileName, jsonString);
 
                 MessageBox.Show("Тестовый набор данных создан");
+
+                GenerateBtn.Visibility = Visibility.Collapsed;
+                FrmMain.Navigate(new OrganizationsPage());
             }
             catch (Exception ex) 
             {

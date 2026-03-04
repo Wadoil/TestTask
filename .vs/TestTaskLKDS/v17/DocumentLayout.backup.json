@@ -7,32 +7,36 @@
       "RelativeMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|solutionrelative:testtasklkds\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\testtasklkds\\models\\organization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|solutionrelative:testtasklkds\\models\\organization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\testtasklkds\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|solutionrelative:testtasklkds\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\testtasklkds\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|solutionrelative:testtasklkds\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\testtasklkds\\pages\\organizationspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|solutionrelative:testtasklkds\\pages\\organizationspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\testtasklkds\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|solutionrelative:testtasklkds\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|d:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u043B\u043A\u0434\u0441\\testtask\\testtasklkds\\pages\\organizationspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|solutionrelative:testtasklkds\\pages\\organizationspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\testtasklkds\\pages\\employeespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|solutionrelative:testtasklkds\\pages\\employeespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\testtasklkds\\models\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|solutionrelative:testtasklkds\\models\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\testtasklkds\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|solutionrelative:testtasklkds\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\testtasklkds\\pages\\organizationspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|solutionrelative:testtasklkds\\pages\\organizationspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\testtasklkds\\models\\organization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|solutionrelative:testtasklkds\\models\\organization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\testtasklkds\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|solutionrelative:testtasklkds\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\testtasklkds\\models\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C6132B0-D99B-46E6-9D00-FD2515340767}|TestTaskLKDS\\TestTaskLKDS.csproj|solutionrelative:testtasklkds\\models\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,70 +46,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "App.xaml",
-              "DocumentMoniker": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\App.xaml",
-              "RelativeDocumentMoniker": "TestTaskLKDS\\App.xaml",
-              "ToolTip": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\App.xaml",
-              "RelativeToolTip": "TestTaskLKDS\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-03T14:15:29.794Z",
+              "DocumentIndex": 3,
+              "Title": "OrganizationsPage.xaml.cs",
+              "DocumentMoniker": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\Pages\\OrganizationsPage.xaml.cs",
+              "RelativeDocumentMoniker": "TestTaskLKDS\\Pages\\OrganizationsPage.xaml.cs",
+              "ToolTip": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\Pages\\OrganizationsPage.xaml.cs",
+              "RelativeToolTip": "TestTaskLKDS\\Pages\\OrganizationsPage.xaml.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAiwBsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T10:32:53.379Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "EmployeesPage.xaml",
               "DocumentMoniker": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\Pages\\EmployeesPage.xaml",
               "RelativeDocumentMoniker": "TestTaskLKDS\\Pages\\EmployeesPage.xaml",
               "ToolTip": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\Pages\\EmployeesPage.xaml",
               "RelativeToolTip": "TestTaskLKDS\\Pages\\EmployeesPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-03T14:11:46.853Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "OrganizationsPage.xaml",
-              "DocumentMoniker": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\Pages\\OrganizationsPage.xaml",
-              "RelativeDocumentMoniker": "TestTaskLKDS\\Pages\\OrganizationsPage.xaml",
-              "ToolTip": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\Pages\\OrganizationsPage.xaml",
-              "RelativeToolTip": "TestTaskLKDS\\Pages\\OrganizationsPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-03T14:11:36.698Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Position.cs",
-              "DocumentMoniker": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\Models\\Position.cs",
-              "RelativeDocumentMoniker": "TestTaskLKDS\\Models\\Position.cs",
-              "ToolTip": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\Models\\Position.cs",
-              "RelativeToolTip": "TestTaskLKDS\\Models\\Position.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T13:56:43.585Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\Models\\Employee.cs",
-              "RelativeDocumentMoniker": "TestTaskLKDS\\Models\\Employee.cs",
-              "ToolTip": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\Models\\Employee.cs",
-              "RelativeToolTip": "TestTaskLKDS\\Models\\Employee.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T13:55:20.69Z",
+              "WhenOpened": "2026-03-03T14:11:46.853Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Organization.cs",
               "DocumentMoniker": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\Models\\Organization.cs",
               "RelativeDocumentMoniker": "TestTaskLKDS\\Models\\Organization.cs",
@@ -113,12 +83,11 @@
               "RelativeToolTip": "TestTaskLKDS\\Models\\Organization.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T13:54:26.413Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-03T13:54:26.413Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\MainWindow.xaml",
               "RelativeDocumentMoniker": "TestTaskLKDS\\MainWindow.xaml",
@@ -136,9 +105,58 @@
               "RelativeDocumentMoniker": "TestTaskLKDS\\MainWindow.xaml.cs",
               "ToolTip": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\MainWindow.xaml.cs",
               "RelativeToolTip": "TestTaskLKDS\\MainWindow.xaml.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAxwCUAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAcwE8AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-03T13:33:19.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "TestTaskLKDS\\Models\\Employee.cs",
+              "ToolTip": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\Models\\Employee.cs",
+              "RelativeToolTip": "TestTaskLKDS\\Models\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T13:55:20.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrganizationsPage.xaml",
+              "DocumentMoniker": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\Pages\\OrganizationsPage.xaml",
+              "RelativeDocumentMoniker": "TestTaskLKDS\\Pages\\OrganizationsPage.xaml",
+              "ToolTip": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\Pages\\OrganizationsPage.xaml",
+              "RelativeToolTip": "TestTaskLKDS\\Pages\\OrganizationsPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-03T14:11:36.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Position.cs",
+              "DocumentMoniker": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\Models\\Position.cs",
+              "RelativeDocumentMoniker": "TestTaskLKDS\\Models\\Position.cs",
+              "ToolTip": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\Models\\Position.cs",
+              "RelativeToolTip": "TestTaskLKDS\\Models\\Position.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T13:56:43.585Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\App.xaml",
+              "RelativeDocumentMoniker": "TestTaskLKDS\\App.xaml",
+              "ToolTip": "D:\\\u043A\u043E\u043B\u043B\u0435\u0434\u0436\\\u041B\u041A\u0414\u0421\\TestTask\\TestTaskLKDS\\App.xaml",
+              "RelativeToolTip": "TestTaskLKDS\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-03T14:15:29.794Z",
               "EditorCaption": ""
             }
           ]

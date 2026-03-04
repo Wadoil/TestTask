@@ -23,6 +23,10 @@ namespace TestTaskLKDS.Pages
         public OrganizationsPage()
         {
             InitializeComponent();
+
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+
+            mainWindow.PageLabel.Text = "Организации";
         }
     }
 }
