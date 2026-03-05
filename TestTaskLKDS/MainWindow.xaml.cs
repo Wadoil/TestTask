@@ -69,8 +69,6 @@ namespace TestTaskLKDS
                     File.WriteAllText(FileName, jsonString);
 
                     MessageBox.Show("Тестовый набор данных создан");
-
-                    FrmMain.Navigate(new OrganizationsPage(DataFile));
                 }
                 catch (Exception ex)
                 {

@@ -78,3 +78,5 @@ D:\college\practice\LKDS\TestTaskLKDS\TestTaskLKDS\bin\Debug\System.Text.Encodin
 D:\college\practice\LKDS\TestTaskLKDS\TestTaskLKDS\bin\Debug\System.Text.Json.xml
 D:\college\practice\LKDS\TestTaskLKDS\TestTaskLKDS\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\college\practice\LKDS\TestTaskLKDS\TestTaskLKDS\obj\Debug\TestTask.A35777E5.Up2Date
+D:\колледж\ЛКДС\TestTask\TestTaskLKDS\obj\Debug\Pages\AddRedactPage.g.cs
+D:\колледж\ЛКДС\TestTask\TestTaskLKDS\obj\Debug\Pages\AddRedactPage.baml

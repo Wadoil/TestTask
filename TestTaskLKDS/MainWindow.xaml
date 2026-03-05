@@ -29,7 +29,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock x:Name="PageLabel" Grid.ColumnSpan="2" Text="Стартовая страница" FontSize="24" Foreground="White" TextAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="PageLabel" Grid.ColumnSpan="2" Text="Стартовая страница" FontSize="24" Foreground="White" TextAlignment="Center" />
             <Button x:Name="BackBtn" Grid.Column="4" Content="Назад" Visibility="Collapsed"/>
         </Grid>
 

@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Text.Json;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,8 +17,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.IO;
-using System.Text.Json;
 using TestTaskLKDS.Models;
 
 namespace TestTaskLKDS.Pages
@@ -52,13 +53,33 @@ namespace TestTaskLKDS.Pages
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
+            // TODO: переход на страницу добавления/редактирования, остальное вырезать
             int _id = _data.Organizations.Count;
-            _data.Organizations.Add(new Organization() {ID=_id, Name="Added org", Address="Added address" });
+            _data.Organizations.Add(new Organization() { ID = _id, Name = "Added org", Address = "Added address" });
 
             SaveData();
+        }
+        private void OpenOrganization()
+        {
+            // TODO: переход на страницу добавления/редактирования
+        }
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // Получение организации из объекта listview
+                var button = sender as Button;
+                var grid = button.Parent as Grid;
+                var organization = grid?.DataContext as Organization;
 
-            OrganizationsListview.ItemsSource = null;
-            OrganizationsListview.ItemsSource = _data.Organizations;       
+                _data.Organizations.Remove(organization).ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            SaveData();
         }
         private void SaveData()
         {
@@ -79,6 +100,8 @@ namespace TestTaskLKDS.Pages
             {
                 MessageBox.Show("Произошла ошибка при сохранении данных");
             }
+            OrganizationsListview.ItemsSource = null;
+            OrganizationsListview.ItemsSource = _data.Organizations;
         }
     }
 }

@@ -8,5 +8,14 @@
             <Setter Property="Background" Value="#FF75D1D8"/>
             <Setter Property="FontSize" Value="16"/>
         </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
     </Application.Resources>
 </Application>

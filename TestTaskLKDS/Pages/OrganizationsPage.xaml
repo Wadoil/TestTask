@@ -28,11 +28,13 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
+                            <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Text="{Binding ID}" TextAlignment="Left" VerticalAlignment="Center" Margin="20 0 0 0"/>
                         <TextBlock Grid.Column="1" Text="{Binding Name}" TextAlignment="Left" VerticalAlignment="Center" Margin="20 0 0 0"/>
                         <TextBlock Grid.Column="2" Text="{Binding Address}" TextAlignment="Left" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <Button Grid.Column="3" x:Name="DeleteBtn" Margin="20" Content="Удалить" Background="#FFFF4646" Click="DeleteBtn_Click"/>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
