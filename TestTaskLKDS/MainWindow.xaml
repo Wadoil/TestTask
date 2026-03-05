@@ -29,8 +29,8 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock x:Name="PageLabel" Grid.ColumnSpan="2" Text="Стартовая страница" FontSize="24" Foreground="White" TextAlignment="Center" />
-            <Button x:Name="BackBtn" Grid.Column="4" Content="Назад" Visibility="Collapsed"/>
+            <TextBlock x:Name="PageLabel" Grid.ColumnSpan="3" Text="Стартовая страница" FontSize="24" Foreground="White" TextAlignment="Left" Margin="20 0 0 0"/>
+            <Button x:Name="BackBtn" Grid.Column="4" Content="Назад" Visibility="Collapsed" Click="BackBtn_Click"/>
         </Grid>
 
         <Button x:Name="GenerateBtn" Grid.Column="1" Grid.Row="2" Content="Создать тестовые данные" Click="GenerateBtn_Click"/>

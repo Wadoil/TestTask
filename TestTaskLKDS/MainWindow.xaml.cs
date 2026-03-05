@@ -26,17 +26,17 @@ namespace TestTaskLKDS
     {
         public string FileName = "TestData.json";
         public bool isDataLoaded = false;
-        public string DataFile;
+        public DataBase Data;
         public MainWindow()
         {
             InitializeComponent();
             try
             {
-                DataFile = File.ReadAllText(FileName);
+                LoadData(File.ReadAllText(FileName));
                 isDataLoaded = true;
                 GenerateBtn.Visibility = Visibility.Collapsed;
                 FrmMain.Visibility = Visibility.Visible;
-                FrmMain.Navigate(new OrganizationsPage(DataFile));
+                FrmMain.Navigate(new OrganizationsPage());
             }
             catch { }
         }
@@ -76,13 +76,29 @@ namespace TestTaskLKDS
                 }
                 GenerateBtn.Visibility = Visibility.Collapsed;
                 FrmMain.Visibility = Visibility.Visible;
-                DataFile = File.ReadAllText(FileName);
-                FrmMain.Navigate(new OrganizationsPage(DataFile));
+                LoadData(File.ReadAllText(FileName));
+                FrmMain.Navigate(new OrganizationsPage());
                 }
             catch (Exception ex) 
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+        public void LoadData(string DataFile)
+        {
+            try
+            {
+                Data = JsonSerializer.Deserialize<DataBase>(DataFile);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            FrmMain.GoBack();
+            BackBtn.Visibility = Visibility.Collapsed;
         }
     }
 }

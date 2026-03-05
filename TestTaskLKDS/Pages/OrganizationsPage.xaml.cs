@@ -24,44 +24,46 @@ namespace TestTaskLKDS.Pages
     /// <summary>
     /// Логика взаимодействия для OrganizationsPage.xaml
     /// </summary>
+    /// TODO: Добавить кнопку "обновить"/обновлять данные после перехода со страницы редактирования (желательно)
     public partial class OrganizationsPage : Page
     {
-        private DataBase _data;
         private MainWindow _mainWindow = Application.Current.MainWindow as MainWindow;
-        public OrganizationsPage(string DataFile)
+        private List<Organization> organizations;
+        public OrganizationsPage()
         {
             InitializeComponent();
 
             _mainWindow.PageLabel.Text = "Организации";
 
-            LoadData(DataFile);
-        }
-        public void LoadData(string DataFile)
-        {
-            try
-            {
-                _data = JsonSerializer.Deserialize<DataBase>(DataFile);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            organizations = _mainWindow.Data.Organizations;
 
-            if (_data != null)
-                OrganizationsListview.ItemsSource = _data.Organizations;
+            if (organizations != null)
+                OrganizationsListview.ItemsSource = organizations;
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
             // TODO: переход на страницу добавления/редактирования, остальное вырезать
-            int _id = _data.Organizations.Count;
-            _data.Organizations.Add(new Organization() { ID = _id, Name = "Added org", Address = "Added address" });
+            int _id = organizations.Count;
+            organizations.Add(new Organization() { ID = _id, Name = "Added org", Address = "Added address" });
 
             SaveData();
         }
-        private void OpenOrganization()
+        private void OpenOrganization(object sender, RoutedEventArgs e)
         {
-            // TODO: переход на страницу добавления/редактирования
+            try
+            {
+                // Получение организации из объекта listview
+                var border = sender as Border;
+                var grid = border.Child as Grid;
+                var organization = grid?.DataContext as Organization;
+
+                _mainWindow.FrmMain.Navigate(new AddRedactPage(organization));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -72,7 +74,7 @@ namespace TestTaskLKDS.Pages
                 var grid = button.Parent as Grid;
                 var organization = grid?.DataContext as Organization;
 
-                _data.Organizations.Remove(organization).ToString();
+                organizations.Remove(organization).ToString();
             }
             catch (Exception ex)
             {
@@ -87,9 +89,9 @@ namespace TestTaskLKDS.Pages
             {
                 var TestData = new DataBase
                 {
-                    Organizations = _data.Organizations,
-                    Employees = _data.Employees,
-                    Positions = _data.Positions
+                    Organizations = organizations,
+                    Employees = _mainWindow.Data.Employees,
+                    Positions = _mainWindow.Data.Positions
                 };
 
                 var options = new JsonSerializerOptions { WriteIndented = true }; // Запись по столбцам
@@ -101,7 +103,7 @@ namespace TestTaskLKDS.Pages
                 MessageBox.Show("Произошла ошибка при сохранении данных");
             }
             OrganizationsListview.ItemsSource = null;
-            OrganizationsListview.ItemsSource = _data.Organizations;
+            OrganizationsListview.ItemsSource = organizations;
         }
     }
 }
