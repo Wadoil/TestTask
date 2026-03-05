@@ -24,7 +24,7 @@ namespace TestTaskLKDS
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string _fileName = "TestData.json";
+        public string FileName = "TestData.json";
         public bool isDataLoaded = false;
         public string DataFile;
         public MainWindow()
@@ -32,7 +32,7 @@ namespace TestTaskLKDS
             InitializeComponent();
             try
             {
-                DataFile = File.ReadAllText(_fileName);
+                DataFile = File.ReadAllText(FileName);
                 isDataLoaded = true;
                 GenerateBtn.Visibility = Visibility.Collapsed;
                 FrmMain.Visibility = Visibility.Visible;
@@ -62,18 +62,25 @@ namespace TestTaskLKDS
                     Employees = Employees,
                     Positions = Positions
                 };
+                try
+                {
+                    var options = new JsonSerializerOptions { WriteIndented = true }; // Запись по столбцам
+                    string jsonString = JsonSerializer.Serialize(TestData, options);
+                    File.WriteAllText(FileName, jsonString);
 
-                var options = new JsonSerializerOptions { WriteIndented = true }; // Запись по столбцам
-                string jsonString = JsonSerializer.Serialize(TestData, options);
-                File.WriteAllText(_fileName, jsonString);
+                    MessageBox.Show("Тестовый набор данных создан");
 
-                MessageBox.Show("Тестовый набор данных создан");
-
+                    FrmMain.Navigate(new OrganizationsPage(DataFile));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
                 GenerateBtn.Visibility = Visibility.Collapsed;
                 FrmMain.Visibility = Visibility.Visible;
-                DataFile = File.ReadAllText(_fileName);
+                DataFile = File.ReadAllText(FileName);
                 FrmMain.Navigate(new OrganizationsPage(DataFile));
-            }
+                }
             catch (Exception ex) 
             {
                 MessageBox.Show(ex.ToString());

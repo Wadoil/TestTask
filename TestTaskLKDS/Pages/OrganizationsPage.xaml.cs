@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using System.Text.Json;
 using TestTaskLKDS.Models;
 
 namespace TestTaskLKDS.Pages
@@ -24,13 +26,12 @@ namespace TestTaskLKDS.Pages
     public partial class OrganizationsPage : Page
     {
         private DataBase _data;
+        private MainWindow _mainWindow = Application.Current.MainWindow as MainWindow;
         public OrganizationsPage(string DataFile)
         {
             InitializeComponent();
 
-            var mainWindow = Application.Current.MainWindow as MainWindow;
-
-            mainWindow.PageLabel.Text = "Организации";
+            _mainWindow.PageLabel.Text = "Организации";
 
             LoadData(DataFile);
         }
@@ -47,6 +48,37 @@ namespace TestTaskLKDS.Pages
 
             if (_data != null)
                 OrganizationsListview.ItemsSource = _data.Organizations;
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            int _id = _data.Organizations.Count;
+            _data.Organizations.Add(new Organization() {ID=_id, Name="Added org", Address="Added address" });
+
+            SaveData();
+
+            OrganizationsListview.ItemsSource = null;
+            OrganizationsListview.ItemsSource = _data.Organizations;       
+        }
+        private void SaveData()
+        {
+            try
+            {
+                var TestData = new DataBase
+                {
+                    Organizations = _data.Organizations,
+                    Employees = _data.Employees,
+                    Positions = _data.Positions
+                };
+
+                var options = new JsonSerializerOptions { WriteIndented = true }; // Запись по столбцам
+                string jsonString = JsonSerializer.Serialize(TestData, options);
+                File.WriteAllText(_mainWindow.FileName, jsonString);
+            }
+            catch
+            {
+                MessageBox.Show("Произошла ошибка при сохранении данных");
+            }
         }
     }
 }

@@ -19,7 +19,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Button Grid.Column="2" Content="Добавить"/>
+        <Button x:Name="AddBtn" Grid.Column="2" Content="Добавить" Click="AddBtn_Click"/>
         <ListView x:Name="OrganizationsListview" Grid.Row="1" Grid.ColumnSpan="3" ScrollViewer.VerticalScrollBarVisibility="Auto">
             <ListView.ItemTemplate>
                 <DataTemplate>
