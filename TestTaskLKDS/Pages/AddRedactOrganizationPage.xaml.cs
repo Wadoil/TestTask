@@ -19,14 +19,13 @@ using System.IO;
 namespace TestTaskLKDS.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для AddRedactPage.xaml
+    /// Логика взаимодействия для AddRedactOrganizationPage.xaml
     /// </summary>
-    public partial class AddRedactPage : Page
+    public partial class AddRedactOrganizationPage : Page
     {
         private MainWindow _mainWindow = Application.Current.MainWindow as MainWindow;
         private Organization _organisation;
-        private Employee _employee;
-        public AddRedactPage(Organization organization)
+        public AddRedactOrganizationPage(Organization organization)
         {
             InitializeComponent();
 
@@ -34,37 +33,19 @@ namespace TestTaskLKDS.Pages
 
             _mainWindow.PageLabel.Text = "Редактирование организации";
 
-            AddressText.Visibility = Visibility.Visible;
-            AddressEntry.Visibility = Visibility.Visible;
             _mainWindow.BackBtn.Visibility = Visibility.Visible;
 
             NameEntry.Text = _organisation.Name;
             AddressEntry.Text = _organisation.Address;
-        }
-        public AddRedactPage(Employee employee)
-        {
-            InitializeComponent();
-
-            _mainWindow.PageLabel.Text = "Редактирование сотрудника";
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                if (_organisation != null)
-                {
-                    var _org = _mainWindow.Data.Organizations.FirstOrDefault(x => x.ID == _organisation.ID);
-                    _org.Name = NameEntry.Text;
-                    _org.Address = AddressEntry.Text;
-                }
-                else
-                {
-                    var _emp = _mainWindow.Data.Employees.FirstOrDefault(x => x.ID == _employee.ID);
-                    _emp.Name = NameEntry.Text;
-                    _emp.Surname = SurnameEntry.Text;
-                    // TODO: доделать сохранение пользователя
-                }
+                var _org = _mainWindow.Data.Organizations.FirstOrDefault(x => x.ID == _organisation.ID);
+                _org.Name = NameEntry.Text;
+                _org.Address = AddressEntry.Text;
 
                 var TestData = new DataBase
                 {

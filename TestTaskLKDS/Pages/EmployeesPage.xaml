@@ -9,6 +9,48 @@
       Title="EmployeesPage">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="UpdateBtn" Grid.Column="1" Content="Обновить" Click="UpdateBtn_Click" Margin="5"/>
+        <Button x:Name="AddBtn" Grid.Column="2" Content="Добавить" Click="AddBtn_Click" Margin="5"/>
+        <ListView x:Name="EmployeesListview" Grid.Row="1" Grid.ColumnSpan="3" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="Margin" Value="0,0,0,5"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border MouseLeftButtonDown="OpenEmployee" HorizontalAlignment="Stretch">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="{Binding ID}" TextAlignment="Left" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                            <TextBlock Grid.Column="1" Text="{Binding Name}" TextAlignment="Left" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="2" Text="{Binding Surname}" TextAlignment="Left" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="3" Text="{Binding Position}" TextAlignment="Left" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="4" Text="{Binding Organization}" TextAlignment="Left" VerticalAlignment="Center"/>
+                            <Button Grid.Column="5" x:Name="DeleteBtn" Margin="20" Content="Удалить" Background="#FFFF4646" Click="DeleteBtn_Click"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

@@ -5,7 +5,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.Json;
-using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,41 +23,42 @@ namespace TestTaskLKDS.Pages
     /// <summary>
     /// Логика взаимодействия для OrganizationsPage.xaml
     /// </summary>
-    /// TODO: Добавить кнопку "обновить"/обновлять данные после перехода со страницы редактирования (желательно)
     public partial class OrganizationsPage : Page
     {
         private MainWindow _mainWindow = Application.Current.MainWindow as MainWindow;
-        private List<Organization> organizations;
+        private List<Organization> _organizations;
         public OrganizationsPage()
         {
             InitializeComponent();
 
             _mainWindow.PageLabel.Text = "Организации";
 
-            organizations = _mainWindow.Data.Organizations;
+            _organizations = _mainWindow.Data.Organizations;
 
-            if (organizations != null)
-                OrganizationsListview.ItemsSource = organizations;
+            if (_organizations != null)
+                OrganizationsListview.ItemsSource = _organizations;
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: переход на страницу добавления/редактирования, остальное вырезать
-            int _id = organizations.Count;
-            organizations.Add(new Organization() { ID = _id, Name = "Added org", Address = "Added address" });
+            int _id = _organizations.Count;
+            Organization _organization = new Organization() { ID = _id, Name = "Новая орагнизация", Address = "" };
+            _organizations.Add(_organization);
 
             SaveData();
+
+            _mainWindow.FrmMain.Navigate(new AddRedactOrganizationPage(_organization));
         }
         private void OpenOrganization(object sender, RoutedEventArgs e)
         {
             try
             {
                 // Получение организации из объекта listview
-                var border = sender as Border;
-                var grid = border.Child as Grid;
-                var organization = grid?.DataContext as Organization;
+                var _border = sender as Border;
+                var _grid = _border.Child as Grid;
+                var _organization = _grid.DataContext as Organization;
 
-                _mainWindow.FrmMain.Navigate(new AddRedactPage(organization));
+                _mainWindow.FrmMain.Navigate(new AddRedactOrganizationPage(_organization));
             }
             catch (Exception ex)
             {
@@ -70,11 +70,11 @@ namespace TestTaskLKDS.Pages
             try
             {
                 // Получение организации из объекта listview
-                var button = sender as Button;
-                var grid = button.Parent as Grid;
-                var organization = grid?.DataContext as Organization;
+                var _button = sender as Button;
+                var _grid = _button.Parent as Grid;
+                var _organization = _grid?.DataContext as Organization;
 
-                organizations.Remove(organization).ToString();
+                _organizations.Remove(_organization).ToString();
             }
             catch (Exception ex)
             {
@@ -89,7 +89,7 @@ namespace TestTaskLKDS.Pages
             {
                 var TestData = new DataBase
                 {
-                    Organizations = organizations,
+                    Organizations = _organizations,
                     Employees = _mainWindow.Data.Employees,
                     Positions = _mainWindow.Data.Positions
                 };
@@ -103,7 +103,13 @@ namespace TestTaskLKDS.Pages
                 MessageBox.Show("Произошла ошибка при сохранении данных");
             }
             OrganizationsListview.ItemsSource = null;
-            OrganizationsListview.ItemsSource = organizations;
+            OrganizationsListview.ItemsSource = _organizations;
+        }
+
+        private void UpdateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            OrganizationsListview.ItemsSource = null;
+            OrganizationsListview.ItemsSource = _organizations;
         }
     }
 }

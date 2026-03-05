@@ -34,6 +34,8 @@ namespace TestTaskLKDS
             {
                 LoadData(File.ReadAllText(FileName));
                 isDataLoaded = true;
+                OrganizationsBtn.Visibility = Visibility.Visible;
+                EmployeesBtn.Visibility = Visibility.Visible;
                 GenerateBtn.Visibility = Visibility.Collapsed;
                 FrmMain.Visibility = Visibility.Visible;
                 FrmMain.Navigate(new OrganizationsPage());
@@ -99,6 +101,15 @@ namespace TestTaskLKDS
         {
             FrmMain.GoBack();
             BackBtn.Visibility = Visibility.Collapsed;
+        }
+
+        private void OrganizationsBtn_Click(Object sender, RoutedEventArgs e)
+        {
+            FrmMain.Navigate(new OrganizationsPage());
+        }
+        private void EmployeesBtn_Click(Object sender, RoutedEventArgs e)
+        {
+            FrmMain.Navigate(new EmployeesPage());
         }
     }
 }

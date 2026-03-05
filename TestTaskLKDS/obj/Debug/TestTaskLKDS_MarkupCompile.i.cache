@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\колледж\ЛКДС\TestTask\TestTaskLKDS\obj\Debug\
+D:\college\practice\LKDS\TestTask\TestTaskLKDS\obj\Debug\
 TestTaskLKDS
 none
 false
 DEBUG;TRACE
-D:\колледж\ЛКДС\TestTask\TestTaskLKDS\App.xaml
-4-929442281
+D:\college\practice\LKDS\TestTask\TestTaskLKDS\App.xaml
+5-2123842263
 
-1331431348
-231562832010
-MainWindow.xaml;Pages\AddRedactPage.xaml;Pages\EmployeesPage.xaml;Pages\OrganizationsPage.xaml;
+14614862110
+23-2026228519
+MainWindow.xaml;Pages\AddRedactEmployeePage.xaml;Pages\AddRedactOrganizationPage.xaml;Pages\EmployeesPage.xaml;Pages\OrganizationsPage.xaml;
 
 True
 

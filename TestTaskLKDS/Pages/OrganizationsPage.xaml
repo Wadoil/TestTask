@@ -19,7 +19,8 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="AddBtn" Grid.Column="2" Content="Добавить" Click="AddBtn_Click"/>
+        <Button x:Name="UpdateBtn" Grid.Column="1" Content="Обновить" Click="UpdateBtn_Click" Margin="5"/>
+        <Button x:Name="AddBtn" Grid.Column="2" Content="Добавить" Click="AddBtn_Click" Margin="5"/>
         <ListView x:Name="OrganizationsListview" Grid.Row="1" Grid.ColumnSpan="3" ScrollViewer.VerticalScrollBarVisibility="Auto">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
