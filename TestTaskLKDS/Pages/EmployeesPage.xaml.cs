@@ -15,7 +15,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestTaskLKDS.Models;
-using static TestTaskLKDS.Pages.EmployeesPage;
 
 namespace TestTaskLKDS.Pages
 {
@@ -42,6 +41,13 @@ namespace TestTaskLKDS.Pages
 
             LoadData();
 
+            List<string> _organizations = new List<string>();
+            _organizations.Add("Без фильтра");
+            for (int i = 0; i != _mainWindow.Data.Organizations.Count; i++)
+                _organizations.Add(_mainWindow.Data.Organizations[i].Name);
+            OrganizationBox.ItemsSource = _organizations;
+            OrganizationBox.SelectedIndex = 0;
+
             if (_employeesData != null)
                 EmployeesListview.ItemsSource = _employeesData;
         }
@@ -56,7 +62,7 @@ namespace TestTaskLKDS.Pages
                         ID = _employee.ID,
                         Name = _employee.Name,
                         Surname = _employee.Surname,
-                        Position = _mainWindow.Data.Positions.FirstOrDefault(x => x.ID == _employee.PositionID).Name,
+                        Position = _employee.Position,
                         Organization = _mainWindow.Data.Organizations.FirstOrDefault(x => x.ID == _employee.OrganizationID).Name
                     };
                     _employeesData.Add(_employeeData);
@@ -86,7 +92,8 @@ namespace TestTaskLKDS.Pages
                 // Получение сотрудника из объекта listview
                 var _border = sender as Border;
                 var _grid = _border.Child as Grid;
-                var _employee = _grid.DataContext as Employee;
+                var _employeeData = _grid.DataContext as EmployeeData;
+                Employee _employee = _mainWindow.Data.Employees.FirstOrDefault(x => x.ID == _employeeData.ID);
 
                 _mainWindow.FrmMain.Navigate(new AddRedactEmployeePage(_employee));
             }
@@ -121,8 +128,7 @@ namespace TestTaskLKDS.Pages
                 var TestData = new DataBase
                 {
                     Organizations = _mainWindow.Data.Organizations,
-                    Employees = _mainWindow.Data.Employees,
-                    Positions = _mainWindow.Data.Positions
+                    Employees = _mainWindow.Data.Employees
                 };
 
                 var options = new JsonSerializerOptions { WriteIndented = true }; // Запись по столбцам
@@ -141,6 +147,34 @@ namespace TestTaskLKDS.Pages
         {
             EmployeesListview.ItemsSource = null;
             EmployeesListview.ItemsSource = _employeesData;
+        }
+
+        private void SearchBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string _searchText = SearchBar.Text?.ToLower().Trim();
+
+            if ((string.IsNullOrWhiteSpace(_searchText) || _searchText == "поиск") && OrganizationBox.SelectedIndex == 0)
+            {
+                EmployeesListview.ItemsSource = _employeesData;
+            }
+            else if ((string.IsNullOrWhiteSpace(_searchText) || _searchText == "поиск") && OrganizationBox.SelectedIndex != 0)
+            {
+                var _filteredEmployees = _employeesData.Where(x => x.Organization == _mainWindow.Data.Organizations.FirstOrDefault(y => y.Name == OrganizationBox.SelectedItem.ToString()).Name);
+                EmployeesListview.ItemsSource = null;
+                EmployeesListview.ItemsSource = _filteredEmployees;
+            }
+            else if (!(string.IsNullOrWhiteSpace(_searchText) || _searchText == "поиск") && OrganizationBox.SelectedIndex == 0)
+            {
+                var _filteredEmployees = _employeesData.Where(x => x.Surname.ToLower().Contains(_searchText));
+                EmployeesListview.ItemsSource = null;
+                EmployeesListview.ItemsSource = _filteredEmployees;
+            }
+            else
+            {
+                var _filteredEmployees = _employeesData.Where(x => x.Surname.ToLower().Contains(_searchText) && x.Organization == _mainWindow.Data.Organizations.FirstOrDefault(y => y.Name == OrganizationBox.SelectedItem.ToString()).Name);
+                EmployeesListview.ItemsSource = null;
+                EmployeesListview.ItemsSource = _filteredEmployees;
+            }
         }
     }
 }

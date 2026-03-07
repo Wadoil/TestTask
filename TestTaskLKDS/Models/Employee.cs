@@ -11,7 +11,7 @@ namespace TestTaskLKDS.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public int PositionID { get; set; }
+        public string Position { get; set; }
         public int OrganizationID { get; set; }
     }
 }

@@ -9,6 +9,31 @@
       Title="AddRedactEmployeePage">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Имя:" TextAlignment="Left" Margin="20 0 0 0"/>
+        <TextBlock Grid.Row="1" Text="Фамилия:" TextAlignment="Left" Margin="20 0 0 0"/>
+        <TextBlock Grid.Row="2" Text="Должность:" TextAlignment="Left" Margin="20 0 0 0"/>
+        <TextBlock Grid.Row="3" Text="Организация:" TextAlignment="Left" Margin="20 0 0 0"/>
+
+        <TextBox Grid.Column="1" x:Name="NameEntry" TextAlignment="Left" FontSize="16"/>
+        <TextBox Grid.Column="1" Grid.Row="1" x:Name="SurnameEntry" TextAlignment="Left" FontSize="16"/>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="PositionEntry" FontSize="16"/>
+        <ComboBox Grid.Row="3" Grid.Column="1" x:Name="OrganizationBox" FontSize="16"/>
+
+        <Button Grid.Column="2" x:Name="SaveBtn" Margin="20" Content="Сохранить" Click="SaveBtn_Click"/>
+
         
     </Grid>
 </Page>

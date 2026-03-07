@@ -118,7 +118,6 @@
     <Compile Include="Models\DataBase.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Organization.cs" />
-    <Compile Include="Models\Position.cs" />
     <Compile Include="Pages\AddRedactEmployeePage.xaml.cs">
       <DependentUpon>AddRedactEmployeePage.xaml</DependentUpon>
     </Compile>

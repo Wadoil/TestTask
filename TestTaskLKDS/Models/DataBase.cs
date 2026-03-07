@@ -10,6 +10,5 @@ namespace TestTaskLKDS.Models
     {
         public List<Organization> Organizations { get; set; }
         public List<Employee> Employees { get; set; }
-        public List<Position> Positions { get; set; }
     }
 }

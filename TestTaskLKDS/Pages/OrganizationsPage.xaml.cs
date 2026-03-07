@@ -90,8 +90,7 @@ namespace TestTaskLKDS.Pages
                 var TestData = new DataBase
                 {
                     Organizations = _organizations,
-                    Employees = _mainWindow.Data.Employees,
-                    Positions = _mainWindow.Data.Positions
+                    Employees = _mainWindow.Data.Employees
                 };
 
                 var options = new JsonSerializerOptions { WriteIndented = true }; // Запись по столбцам

@@ -18,10 +18,25 @@
             <RowDefinition Height="0.2*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBox x:Name="SearchBar" Text="Поиск" Margin="10"/>
+                <ComboBox x:Name="OrganizationBox" Grid.Column="1" Margin="10"/>
+            </Grid>
+            <Button x:Name="SearchBtn" Content="Поиск" Margin="10 0" Click="SearchBtn_Click"/>
+        </StackPanel>
 
         <Button x:Name="UpdateBtn" Grid.Column="1" Content="Обновить" Click="UpdateBtn_Click" Margin="5"/>
         <Button x:Name="AddBtn" Grid.Column="2" Content="Добавить" Click="AddBtn_Click" Margin="5"/>
-        <ListView x:Name="EmployeesListview" Grid.Row="1" Grid.ColumnSpan="3" ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <ListView x:Name="EmployeesListview" Grid.Row="1" Grid.ColumnSpan="4" ScrollViewer.VerticalScrollBarVisibility="Auto">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"/>

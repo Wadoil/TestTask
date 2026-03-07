@@ -49,20 +49,18 @@ namespace TestTaskLKDS
             {
                 List<Organization> Organizations = new List<Organization>();
                 List<Employee> Employees = new List<Employee>();
-                List<Position> Positions = new List<Position>();
+                int j = 0, f = 10;
                 for (int i = 0; i != 3; i++)
                 {
-                    Organizations.Add(new Organization() { ID = i, Name = "Test organization", Address = "Test address" });
-                    for (int j = 0; j != 10; j++)
-                        Employees.Add(new Employee() { ID = j, Name = "Test name", Surname = "Test surname", OrganizationID = i, PositionID = j });
+                    Organizations.Add(new Organization() { ID = i, Name = $"Test organization {i}", Address = "Test address" });
+                    for (; j != f; j++)
+                        Employees.Add(new Employee() { ID = j, Name = "Test name", Surname = "Test surname", OrganizationID = i, Position = "Test position" });
+                    f += 10;
                 }
-                for (int i = 0; i != 10; i ++)
-                    Positions.Add(new Position() { ID = i, Name = "Test position" });
                 var TestData = new DataBase
                 {
                     Organizations = Organizations,
-                    Employees = Employees,
-                    Positions = Positions
+                    Employees = Employees
                 };
                 try
                 {
@@ -78,6 +76,8 @@ namespace TestTaskLKDS
                 }
                 GenerateBtn.Visibility = Visibility.Collapsed;
                 FrmMain.Visibility = Visibility.Visible;
+                OrganizationsBtn.Visibility = Visibility.Visible;
+                EmployeesBtn.Visibility = Visibility.Visible;
                 LoadData(File.ReadAllText(FileName));
                 FrmMain.Navigate(new OrganizationsPage());
                 }
@@ -100,7 +100,6 @@ namespace TestTaskLKDS
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
             FrmMain.GoBack();
-            BackBtn.Visibility = Visibility.Collapsed;
         }
 
         private void OrganizationsBtn_Click(Object sender, RoutedEventArgs e)
