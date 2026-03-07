@@ -63,10 +63,13 @@ namespace TestTaskLKDS.Pages
                 var options = new JsonSerializerOptions { WriteIndented = true }; // Запись по столбцам
                 string jsonString = JsonSerializer.Serialize(TestData, options);
                 File.WriteAllText(_mainWindow.FileName, jsonString);
+
+                Logger.Info($"Данные сотрудника {_emp.Surname} {_emp.Name} были обновлены");
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Произошла ошибка при сохранении данных");
+                Logger.Error($"При редактировании данных сотрудника произошла ошибка: {ex.Message}");
+                MessageBox.Show("При редактировании данных сотрудника произошла ошибка");
             }
         }
     }

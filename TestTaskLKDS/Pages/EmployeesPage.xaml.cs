@@ -70,19 +70,28 @@ namespace TestTaskLKDS.Pages
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                Logger.Error($"При загрузке данных сотрудников произошла ошибка: {ex.Message}");
+                MessageBox.Show("При загрузке данных сотрудников произошла ошибка");
             }
         }
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            int _id = _employeesData.Count;
-            EmployeeData _employeeData = new EmployeeData() { ID = _id, Name = "Новый сотрудник"};
-            _employeesData.Add(_employeeData);
-            Employee _employee = _mainWindow.Data.Employees.FirstOrDefault(x => x.ID == _employeeData.ID);
+            try
+            {
+                int _id = _employeesData.Count;
+                EmployeeData _employeeData = new EmployeeData() { ID = _id, Name = "Новый сотрудник" };
+                _employeesData.Add(_employeeData);
 
-            SaveData();
+                Employee _employee = new Employee() { ID = _id, Name = "Новый сотрудник" };
+                _mainWindow.Data.Employees.Add(_employee);
 
-            _mainWindow.FrmMain.Navigate(new AddRedactEmployeePage(_employee));
+                SaveData();
+
+                _mainWindow.FrmMain.Navigate(new AddRedactEmployeePage(_employee));
+
+                Logger.Info("Добавлен новый сотрудник");
+            }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); }
         }
 
         private void OpenEmployee(object sender, RoutedEventArgs e)
@@ -99,7 +108,8 @@ namespace TestTaskLKDS.Pages
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                Logger.Error($"При открытии редактора сотрудников произошла ошибка: {ex.Message}");
+                MessageBox.Show("При открытии редактора сотрудников произошла ошибка");
             }
         }
         private void DeleteBtn_Click(Object sender, RoutedEventArgs e) 
@@ -107,16 +117,20 @@ namespace TestTaskLKDS.Pages
             try
             {
                 // Получение сотрудника из объекта listview
-                var _border = sender as Border;
-                var _grid = _border.Child as Grid;
-                var _employeeData = _grid.DataContext as EmployeeData;
-                var _employee = _mainWindow.Data.Employees.FirstOrDefault(x => x.ID == _employeeData.ID);
+                var _button = sender as Button;
+                var _grid = _button.Parent as Grid;
+                var _employeeData = _grid?.DataContext as EmployeeData;
+                Employee _employee = _mainWindow.Data.Employees.FirstOrDefault(x => x.ID == _employeeData.ID);
+                
+                Logger.Info($"Сотрудник {_employee.Surname} {_employee.Name} был(а) удален(а)");
 
-                _mainWindow.Data.Employees.Remove(_employee).ToString();
+                _employeesData.Remove(_employeeData);
+                _mainWindow.Data.Employees.Remove(_employee);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                Logger.Error($"При удалении сотрудника произошла ошибка: {ex.Message}");
+                MessageBox.Show("При удалении сотрудника произошла ошибка");
             }
 
             SaveData();
@@ -135,8 +149,9 @@ namespace TestTaskLKDS.Pages
                 string jsonString = JsonSerializer.Serialize(TestData, options);
                 File.WriteAllText(_mainWindow.FileName, jsonString);
             }
-            catch
+            catch (Exception ex)
             {
+                Logger.Error($"Произошла ошибка при сохранении данных: {ex.Message}");
                 MessageBox.Show("Произошла ошибка при сохранении данных");
             }
             EmployeesListview.ItemsSource = null;

@@ -25,26 +25,25 @@ namespace TestTaskLKDS
     public partial class MainWindow : Window
     {
         public string FileName = "TestData.json";
-        public bool isDataLoaded = false;
         public DataBase Data;
         public MainWindow()
         {
+            Logger.Info("Инициализация приложения");
             InitializeComponent();
             try
             {
                 LoadData(File.ReadAllText(FileName));
-                isDataLoaded = true;
-                OrganizationsBtn.Visibility = Visibility.Visible;
-                EmployeesBtn.Visibility = Visibility.Visible;
-                GenerateBtn.Visibility = Visibility.Collapsed;
-                FrmMain.Visibility = Visibility.Visible;
                 FrmMain.Navigate(new OrganizationsPage());
             }
-            catch { }
+            catch (Exception ex) 
+            {
+                Logger.Error($"При инициализации приложения произошла ошибка: {ex.Message}");
+            }
         }
 
         private void GenerateBtn_Click(object sender, RoutedEventArgs e)
         {
+            Logger.Info("Начата генерация тестового набора данных");
             try
             {
                 List<Organization> Organizations = new List<Organization>();
@@ -62,28 +61,28 @@ namespace TestTaskLKDS
                     Organizations = Organizations,
                     Employees = Employees
                 };
+
                 try
                 {
                     var options = new JsonSerializerOptions { WriteIndented = true }; // Запись по столбцам
                     string jsonString = JsonSerializer.Serialize(TestData, options);
                     File.WriteAllText(FileName, jsonString);
 
-                    MessageBox.Show("Тестовый набор данных создан");
+                    Logger.Info("Тестовый набор данных создан");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    Logger.Error($"При записи данных произошла ошибка: {ex.Message}");
+                    MessageBox.Show("При записи данных произошла ошибка");
                 }
-                GenerateBtn.Visibility = Visibility.Collapsed;
-                FrmMain.Visibility = Visibility.Visible;
-                OrganizationsBtn.Visibility = Visibility.Visible;
-                EmployeesBtn.Visibility = Visibility.Visible;
+
                 LoadData(File.ReadAllText(FileName));
                 FrmMain.Navigate(new OrganizationsPage());
                 }
             catch (Exception ex) 
             {
-                MessageBox.Show(ex.ToString());
+                Logger.Error($"При создании тестовых данных произошлао ошибка: {ex.Message}");
+                MessageBox.Show("При создании тестовых данных произошлао ошибка");
             }
         }
         public void LoadData(string DataFile)
@@ -91,10 +90,17 @@ namespace TestTaskLKDS
             try
             {
                 Data = JsonSerializer.Deserialize<DataBase>(DataFile);
+                GenerateBtn.Visibility = Visibility.Collapsed;
+                FrmMain.Visibility = Visibility.Visible;
+                OrganizationsBtn.Visibility = Visibility.Visible;
+                EmployeesBtn.Visibility = Visibility.Visible;
+
+                Logger.Info("Данные успешно загружены");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                Logger.Error($"При загрузке данных произошла ошибка: {ex.Message}");
+                MessageBox.Show("При загрузке данных произошла ошибка");
             }
         }
         private void BackBtn_Click(object sender, RoutedEventArgs e)

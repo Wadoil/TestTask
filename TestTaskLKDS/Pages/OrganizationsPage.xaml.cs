@@ -48,6 +48,8 @@ namespace TestTaskLKDS.Pages
             SaveData();
 
             _mainWindow.FrmMain.Navigate(new AddRedactOrganizationPage(_organization));
+
+            Logger.Info("Добавлена новая организация");
         }
         private void OpenOrganization(object sender, RoutedEventArgs e)
         {
@@ -62,7 +64,8 @@ namespace TestTaskLKDS.Pages
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                Logger.Error($"При открытии редактора организации произошла ошибка: {ex.Message}");
+                MessageBox.Show("При открытии редактора организации произошла ошибка");
             }
         }
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
@@ -73,14 +76,32 @@ namespace TestTaskLKDS.Pages
                 var _button = sender as Button;
                 var _grid = _button.Parent as Grid;
                 var _organization = _grid?.DataContext as Organization;
+                try
+                {
+                    List<Employee> _employees = _mainWindow.Data.Employees.Where(x => x.OrganizationID == _organization.ID).ToList();
 
-                _organizations.Remove(_organization).ToString();
+                    foreach (var employee in _employees)
+                    {
+                        _mainWindow.Data.Employees.Remove(employee);
+                    }
+
+                    _organizations.Remove(_organization);
+
+                    Logger.Info($"Сотрудники организации {_organization.Name} были удалены");
+                }
+                catch (Exception ex)
+                {
+                    Logger.Error($"При удалении сотрудников организации произошла ошибка: {ex.Message}");
+                    MessageBox.Show("При удалении сотрудников организации произошла ошибка");
+                }
+
+                Logger.Info($"Организация {_organization.Name} была удалена");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                Logger.Error($"При удалении организации произошла ошибка: {ex.Message}");
+                MessageBox.Show("При удалении организации произошла ошибка");
             }
-
             SaveData();
         }
         private void SaveData()
@@ -97,8 +118,9 @@ namespace TestTaskLKDS.Pages
                 string jsonString = JsonSerializer.Serialize(TestData, options);
                 File.WriteAllText(_mainWindow.FileName, jsonString);
             }
-            catch
+            catch (Exception ex)
             {
+                Logger.Error($"Произошла ошибка при сохранении данных: {ex.Message}");
                 MessageBox.Show("Произошла ошибка при сохранении данных");
             }
             OrganizationsListview.ItemsSource = null;
